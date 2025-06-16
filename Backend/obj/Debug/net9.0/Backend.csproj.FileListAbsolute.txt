@@ -25,9 +25,9 @@ C:\dirt_depot\Backend\obj\Debug\net9.0\Backend.pdb
 C:\dirt_depot\Backend\obj\Debug\net9.0\Backend.genruntimeconfig.cache
 C:\dirt_depot\Backend\obj\Debug\net9.0\ref\Backend.dll
 C:\dirt_depot\Backend\obj\Debug\net9.0\Backend.csproj.AssemblyReference.cache
-C:\dirt_depot\Backend\bin\Debug\net9.0\api\appsettings.json
 C:\dirt_depot\Backend\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\dirt_depot\Backend\bin\Debug\net9.0\Stripe.net.dll
 C:\dirt_depot\Backend\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
 C:\dirt_depot\Backend\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 C:\dirt_depot\Backend\obj\Debug\net9.0\Backend.csproj.Up2Date
+C:\dirt_depot\Backend\obj\Debug\net9.0\Backend.sourcelink.json
