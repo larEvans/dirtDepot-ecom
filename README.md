@@ -1,6 +1,8 @@
 # dirtDepot-ecom
 Usage
 
+Description: A simple e-commerce website for a fill dirt company. The client requires a website that allows customers to order fill dirt online. **The cart is strictly for prototyping purposes. Stripe payments are not active** **
+
 Home: Overview, intro, How It Works, pricing table.
 
 Order: Image slider, load calculator, add to cart.
