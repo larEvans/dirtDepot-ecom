@@ -1,0 +1,52 @@
+name: Deploy Dirt-Depot-ecom to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read      # needed to checkout
+  pages: write        # needed to publish Pages
+  id-token: write     # needed by Pages deploy
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      # 1) Checkout your code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2) Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3) Install and build the frontend
+      - name: Install dependencies & build
+        working-directory: Frontend
+        run: |
+          npm ci
+          npm run build
+
+      # 4) Configure Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 5) Upload the build output
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: Frontend/dist
+
+      # 6) Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
