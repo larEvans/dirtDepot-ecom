@@ -1,0 +1,588 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+
+/* 1) CSS variables & reset */
+:root {
+    --color-primary: #4a90e2;
+    --color-secondary: #50e3c2;
+    --color-bg: #f5f7fa;
+    --color-surface: #ffffff;
+    --color-text: #333333;
+    --radius: 8px;
+    --gap: 1rem;
+    --transition: 0.2s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* 2) Container utility */
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    padding: var(--gap) 0;
+}
+
+/* 3) Navigation */
+nav {
+    background: var(--color-surface);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: var(--gap);
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* 4) Headings */
+h1,
+h2,
+h3 {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* 5) HomePage hero (if used) */
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+/* 6) Gallery grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--gap);
+    padding: var(--gap) 0;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition);
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* 7) Order form */
+.order {
+    background: var(--color-surface);
+    padding: var(--gap);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-width: 480px;
+    margin: var(--gap) auto;
+}
+
+.order form {
+    display: grid;
+    gap: var(--gap);
+}
+
+.order label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.order input {
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+}
+
+.order input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.order button {
+    padding: 0.75rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.order button:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* 8) Footer */
+footer {
+    background: var(--color-surface);
+    padding: var(--gap) 0;
+    text-align: center;
+    font-size: 0.9rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
+}
+/*order page*/
+
+
+
+
+
+/* OrderPage layout */
+.order-fullwidth {
+    width: 100%;
+    padding: var(--gap) 0;
+}
+
+.order-container {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Gallery column */
+.order-gallery {
+    flex: 1;
+    display: grid;
+    gap: 1rem;
+}
+
+.order-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Details column */
+.order-details {
+    flex: 1;
+}
+
+/* Form */
+.order-form {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    max-width: 300px;
+}
+
+.order-form label {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-input {
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.order-button {
+    padding: 0.75rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.order-button:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+/* Calculator box */
+.order-calculator {
+    background: var(--color-surface);
+    padding: var(--gap);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: grid;
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+.order-calculator h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.order-calculator label {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-result {
+    margin-top: var(--gap);
+    font-size: 1.1rem;
+}
+
+
+/* Instruction paragraph */
+.order-instructions {
+    margin-top: var(--gap);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+/* Toggle button */
+.toggle-button {
+    background: var(--color-surface);
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+    margin-bottom: var(--gap);
+}
+
+.toggle-button:hover {
+    background: var(--color-bg);
+    transform: translateY(-1px);
+}
+/* Small blurb above the calculator */
+.calculator-instructions {
+    margin-bottom: var(--gap);
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+/* How It Works section */
+.how-it-works {
+    padding: var(--gap) 0;
+    text-align: center;
+}
+
+.hiw-title {
+    font-size: 2rem;
+    margin-bottom: var(--gap);
+}
+
+.hiw-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--gap);
+}
+
+.hiw-step {
+    background: var(--color-surface);
+    padding: var(--gap);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition);
+}
+
+.hiw-step:hover {
+    transform: translateY(-4px);
+}
+
+.hiw-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hiw-step-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.hiw-step-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+/* IntroSection */
+.intro-hero {
+    position: relative;
+    background-image: url('./assets/dirt-mound-that-dump-truck-is-ready-empty.avif');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.intro-content h1 {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.intro-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    padding: var(--gap);
+}
+
+.intro-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-content p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* Stack on narrow screens */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.intro-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+
+.cart-link {
+    margin-left: var(--gap);
+    font-weight: 600;
+    color: var(--color-text);
+    transition: color var(--transition);
+}
+
+.cart-link:hover {
+    color: var(--color-primary);
+}
+.proceed-button {
+    display: inline-block;
+    margin-top: var(--gap);
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.proceed-button:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+/* HomePage Order CTA */
+.home-order-cta {
+    text-align: center;
+    margin: var(--gap) 0;
+}
+
+.home-order-cta .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.home-order-cta .btn-primary:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* Pricing Table */
+.price-table {
+    margin: var(--gap) 0;
+}
+
+.price-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.price-table th {
+    background: var(--color-primary);
+    color: #fff;
+}
+.checkout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--gap) 0;
+}
+
+.checkout-table th,
+.checkout-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.checkout-table th {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.checkout-table tfoot td {
+    background: var(--color-surface);
+}
+
+.checkout-button {
+    margin-top: var(--gap);
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.checkout-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.checkout-button:hover:not(:disabled) {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+.order-gallery {
+    flex: 1;
+    overflow: hidden;
+    /* Adjust slide viewport size */
+    width: 100%;
+    /* full available width */
+    max-width: 600px;
+    /* limit if desired */
+    height: 300px;
+    /* fixed height for slides */
+}
+
+.swiper-slide {
+    /* Center slide content without zoom */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-slide-image {
+    /* prevent zoom: maintain aspect ratio within container */
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: adjust navigation & pagination colors */
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--color-primary);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-primary);
+}
+
+```css .order-gallery {
+    flex: 1;
+    overflow: hidden;
+    /* Set desired slide viewport size */
+    width: 400px;
+    height: 400px;
+}
+
+.swiper-slide {
+    /* Ensure each slide inherits container size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.order-slide-image {
+    /* Fit entire image without cropping */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--color-primary);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-primary);
+}
