@@ -29,4 +29,4 @@ Open a Pull Request
 
 License
 
-MIT © Your Name
+MIT © Larson Evans
