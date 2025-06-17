@@ -586,3 +586,49 @@ footer {
 .swiper-pagination-bullet-active {
     background: var(--color-primary);
 }
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--gap) 0;
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.cart-table th {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.remove-button {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tfoot td {
+    background: var(--color-surface);
+}
+
+.proceed-button {
+    display: inline-block;
+    margin-top: var(--gap);
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.proceed-button:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
